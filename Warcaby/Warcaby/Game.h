@@ -24,7 +24,7 @@ private:
 	unsigned int choosen_type = 0;	//0 - pionek, 1 - damka
 	unsigned int choosen_pos_in_vec = 0;
 
-
+	std::vector<unsigned int [2]> possible_moves;
 
 public:
 	Game();
@@ -49,6 +49,7 @@ private:
 	void delete_pionek(unsigned int pos_in_vec_pion);
 	void delete_damka(unsigned int pos_in_vec_dam);
 	bool check_if_move_possible();
+	void calculate_all_possible_moves();
 public:
 	~Game();
 
