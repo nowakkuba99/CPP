@@ -42,7 +42,7 @@ int main()
 	delete new_game;
 	delete Black;
 	delete White;
-	cout<<"EXEXE"<<endl;
+
 	cin.ignore();
 	return 0;
 }
