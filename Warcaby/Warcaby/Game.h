@@ -48,6 +48,7 @@ private:
 	unsigned int get_pos_in_vec_dam(unsigned int id);
 	void delete_pionek(unsigned int pos_in_vec_pion);
 	void delete_damka(unsigned int pos_in_vec_dam);
+	bool check_if_move_possible();
 public:
 	~Game();
 

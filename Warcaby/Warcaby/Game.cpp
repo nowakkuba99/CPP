@@ -275,7 +275,10 @@ void Game::debug_show_info_choosen()
 		this->damki[this->choosen_pos_in_vec]->get_info();
 	}
 }
-
+bool Game::check_if_move_possible()
+{
+	return true;
+}
 
 
 
