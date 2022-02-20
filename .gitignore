@@ -1,7 +1,7 @@
-*.cproject
-*.project
-Warcaby/ChangeLog
-Warcaby/Debug/
-Warcaby/Release/
-Warcaby/.metadata/
-Warcaby/.settings/
+Warcaby/*.cproject
+Warcaby/*.project
+Warcaby/Warcaby/ChangeLog
+Warcaby/Warcaby/Debug/
+Warcaby/Warcaby/Release/
+Warcaby/Warcaby/.metadata/
+Warcaby/Warcaby/.settings/
