@@ -281,56 +281,56 @@ bool Game::check_if_move_possible()
 }
 void Game::calculate_all_possible_moves()
 {
-	bool flag_ready = false;
 	unsigned int x,y;
-	unsigned int buff[2]={0};
-	/*Clear possible moves vector*/
+	vector<unsigned int> buff;
+	//Clear possible moves vector
 	this->possible_moves.clear();
-	/*Check type*/
+	//Check type
 	if(this->choosen_type == 0)
 	{
-		/*Pionek*/
-		/*Possible moves/
-		 * #1 x+1, y-1/y+1 if there is no opponent
-		 * #2 x+2, y-2/y+2 if there is opponent on x+1 y-1/y+1
-		 */
+		//Pionek
+		//Possible moves/
+		// #1 x+1, y-1/y+1 if there is no opponent
+		// #2 x+2, y-2/y+2 if there is opponent on x+1 y-1/y+1
+
 		x = this->pionki[this->choosen_pos_in_vec]->get_poz_x();
 		y = this->pionki[this->choosen_pos_in_vec]->get_poz_y();
-		/* #1 - x+1, y-1*/
+		// #1 - x+1, y-1
 		if((x+1 < 8) && (y-1 > 0))
 		{
-			/*Field exist*/
+			//Field exist
 			if(this->id_board[x+1][y-1] == 0)
 			{
-				/*Field is empty -> Move is possible*/
-				buff[0] = x+1;
-				buff[1] = y-1;
+				//Field is empty -> Move is possible
+				buff.push_back(x+1);
+				buff.push_back(y-1);
 				this->possible_moves.push_back(buff);
 			}
 			else
 			{
-				/*Field is taken*/
-				if((this->pionki[this->choosen_pos_in_vec]->get_id() != this->get_type(this->id_board[x+1][y-1])) && (this->pionki[this->choosen_pos_in_vec]->get_id() != (this->get_type(this->id_board[x+1][y-1]))-32))
+				//Field is taken
+				if((int(this->pionki[this->choosen_pos_in_vec]->get_id()) != int(this->get_type(this->id_board[x+1][y-1]))) && (int(this->pionki[this->choosen_pos_in_vec]->get_id()) != (this->get_type(this->id_board[x+1][y-1]))-32))
 				{
-					/*Field is NOT the same type as chosen one*/
+					//Field is NOT the same type as chosen one
 					if((x+2 < 8) && (y-2 > 0))
 					{
-						/*Field exist*/
+						//Field exist
 						if(this->id_board[x+2][y-2] == 0)
 						{
-							/*Field is empty -> Move is possible*/
-							buff[0] = x+1;
-							buff[1] = y-1;
+							//Field is empty -> Move is possible
+							buff.push_back(x+1);
+							buff.push_back(y-1);
 							this->possible_moves.push_back(buff);
 						}
 					}
 				}
 			}
 		}
+		// #2 - x+1, y+1
 	}
 	else if (this->choosen_type == 1)
 	{
-		/*Damka*/
+		//Damka
 	}
 }
 

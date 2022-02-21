@@ -24,7 +24,7 @@ private:
 	unsigned int choosen_type = 0;	//0 - pionek, 1 - damka
 	unsigned int choosen_pos_in_vec = 0;
 
-	std::vector<unsigned int [2]> possible_moves;
+	std::vector<std::vector<unsigned int>> possible_moves;
 
 public:
 	Game();
